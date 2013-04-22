@@ -1,0 +1,45 @@
+#avoid flicker
+double_buffer yes
+
+#own window to run 2 or more conkys simultaneously
+own_window  yes
+own_window_transparent no
+own_window_type dock
+own_window_hints undecorate,above,sticky,skip_taskbar,skip_pager
+
+#borders
+draw_borders no
+draw_graph_borders yes
+border_width 1
+border_margin 3
+
+#shades
+draw_shades no
+
+#position
+gap_x 0
+gap_y 4
+alignment top_left
+
+#behaviour
+update_interval 1
+
+#colour
+default_color FFFFFF
+#default_shade_color 000000
+own_window_colour 000000
+#font
+use_xft yes
+#xftfont Meslo LG S DZ:size=8
+xftfont DejaVu Sans Mono:size=10
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer none
+minimum_size 1600 0
+maximum_width 2040
+
+TEXT
+${color 333333}${membar 10,100 C3FF68 C3FF68} ${color 777777}$memperc% ${goto 145}${color 333333}${cpugraph cpu0 10,100 1693A5 1693A5 -l}${cpugraph cpu1 10,100 FF0066 FF0066 -l}${cpugraph cpu2 10,100 FBB829 FBB829 -l}${cpugraph cpu3 10,100 CDD7B6 CDD7B6 -l} ${color 777777}$cpu% ${goto 580}${color 777777} ↑$color${upspeed eth0}${goto 650} ${color 777777}↓$color${downspeed eth0}${goto 710} ${color 333333}  $color${fs_used /}${color 777777}/${fs_size /} | $color${fs_used /home}${color 777777}/${fs_size /home} ${alignr}[$color${execi 60 $HOME/bin/gmail.sh}${color 777777}] ${time %a} ${color}${time %e} ${color 777777}${time %b} ${color}${time %l:%M}${color 777777}:${time %S}
