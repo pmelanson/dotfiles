@@ -10,5 +10,5 @@ URxvt*color12: RoyalBlue
 URxvt*scrollBar: true
 URxvt*scrollBar_right: false
 URxvt*scrollstyle: plain
-URxvt*visualBell: true
+#URxvt*visualBell: true
 URxvt*urgentOnBell: true
