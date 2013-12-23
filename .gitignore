@@ -1,0 +1,10 @@
+*
+
+!.gitignore
+!.bashrc
+!.i3/config
+!.config/i3status/config
+!.conkyrc
+!.Xdefaults
+!.bash_aliases
+!.vimrc
