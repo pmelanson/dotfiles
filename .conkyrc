@@ -2,7 +2,7 @@
 double_buffer yes
 
 #own window to run 2 or more conkys simultaneously
-own_window  yes
+own_window yes
 own_window_transparent no
 own_window_type dock
 own_window_hints undecorate,above,sticky,skip_taskbar,skip_pager
@@ -12,8 +12,6 @@ border_inner_margin 2
 border_outer_margin 0
 draw_borders no
 draw_graph_borders no
-border_width 0
-#border_margin 3
 
 #shades
 draw_shades no
@@ -28,9 +26,6 @@ update_interval 1
 update_interval_on_battery 1
 
 #colour
-color7 blue
-color8 white
-color9 red
 default_color white
 #default_shade_color 000000
 own_window_colour 303030
@@ -44,8 +39,7 @@ override_utf8_locale yes
 
 #to prevent window from moving
 use_spacer right
-minimum_size 1600 0
-maximum_width 2040
+maximum_width 1366
 
 default_graph_size 10 100
 format_human_readable yes
@@ -66,5 +60,5 @@ ${wireless_link_qual_perc wlan0}\
 ${endif}\
 $color$battery_short ${color darkgray}($battery_time) \
 ${alignr}\
-$color${exec amixer get Master | egrep -o "\-?[0-9]+\.[0-9]+dB"} \
+$color${exec /home/vac/bin/volume.sh} \
 ${color gray}${time %a} ${color}${time %e} ${color darkgray}${time %b} ${color}${time %l:%M}${color darkgray}:${time %S} \

@@ -180,17 +180,17 @@ bar {
         focused_workspace     $bfoc 		$orange 	$fgnorm
         active_workspace      $orange 		$bgunf  	$fgnorm
         inactive_workspace    $bunf 		$bgunf  	$fgnorm
-        urgent_workspace      $bfoc 		$orange 	$fgnorm
+        urgent_workspace      $bfoc 		#ff1203 	$fgnorm
 	}
 }
 
 exec DISPLAY=:0 feh --bg-fill "$(find /home/vac/Pictures/wallpapers/|shuf -n1)"
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 1dB+ unmute
-bindsym Shift+XF86AudioRaiseVolume exec amixer -q set Master 10dB+ unmute
-bindsym Shift+XF86AudioLowerVolume exec amixer -q set Master 10dB- unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 1dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set "$(/home/vac/bin/audio.sh)" 1dB+ unmute
+bindsym Shift+XF86AudioRaiseVolume exec amixer -q set "$(/home/vac/bin/audio.sh)" 10dB+ unmute
+bindsym Shift+XF86AudioLowerVolume exec amixer -q set "$(/home/vac/bin/audio.sh)" 10dB- unmute
+bindsym XF86AudioLowerVolume exec amixer -q set "$(/home/vac/bin/audio.sh)" 1dB- unmute
+bindsym XF86AudioMute exec amixer -q set "$(/home/vac/bin/audio.sh)" toggle
 bindsym Print exec "scrot '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots/'"
 
 bindsym $mod+period workspace next

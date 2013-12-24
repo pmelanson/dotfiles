@@ -8,3 +8,6 @@
 !.Xdefaults
 !.bash_aliases
 !.vimrc
+
+!bin/audio.sh
+!bin/volume.sh
