@@ -50,7 +50,7 @@ ${memgraph 10,100 FF3300 FFAA00 -t -l} ${color darkgray}$memperc%${goto 140}\
 ${cpugraph cpu0 10,100 AA5500 AA8800 -t -l} ${color darkgray}$cpu%${goto 280}\
 ${diskiograph_read /dev/sda 10,100 663300 996633 -t -l} ↑${diskio_read /dev/sda} \
 ${diskiograph_write /dev/sda 10,100 663300 996633 -t -l} ↓${diskio_write} \
-${if_existing /sys/class/net/eth0/operstate up}
+${if_existing /sys/class/net/eth0/operstate up} \
 ${upspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↑${upspeed eth0} \
 ${downspeedgraph eth0 10,100 CCCC00 FFFF00 -t -l} ↓${downspeed eth0} \
 ${else}\

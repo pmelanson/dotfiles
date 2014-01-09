@@ -211,8 +211,10 @@ new_window 1pixel
 default_orientation auto
 
 exec redshift
-exec vlc
 exec conky
+exec xautolock -time 10 -locker "xlock -mode matrix" -nowlocker "xlock -mode matrix"
+
+bindsym $mod+m exec "xautolock -locknow"
 
 # class                 border  backgr. text    indicator
 client.focused          $bfoc   $orange $fgnorm $bfoc

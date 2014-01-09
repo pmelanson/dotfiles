@@ -184,9 +184,8 @@ fi
 #i add dis
 export TERMINAL=urxvt
 export EDITOR=vim
-set -o vi
 
-PATH="${PATH}:/home/vac/bin"
+PATH="${PATH}:/home/vac/bin:/home/vac/.cabal/bin"
 
 case "$TERM" in
 xterm*|rxvt*)
@@ -231,9 +230,26 @@ fi
 #i add dis
 export TERMINAL=urxvt
 export EDITOR=vim
+export BROWSER=firefox
+
 set -o vi
 
 PATH="${PATH}:/home/vac/bin"
 
 #try using bash command not found hook
 [ -r /usr/share/doc/pkgfile/command-not-found.bash ] && . /usr/share/doc/pkgfile/command-not-found.bash
+
+#colored man pages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
+#this is me trying to add autocompletion to my aliases
+complete -cf sudo

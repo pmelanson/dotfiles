@@ -16,14 +16,15 @@ alias make="make -j6"
 alias ..="cd .."
 alias mkdir="mkdir -pv"
 alias du="du -h"
+alias pacman="powerpill"
 
 # new commands
 alias hist="history | grep"
 alias susp="sudo pm-suspend && xlock -mode matrix"
 alias f="find ./ | grep -i"
-alias back="feh --bg-fill \"$(find /home/vac/Pictures/wallpapers/|shuf -n1)\""
-alias wifi="sudo netctl switch-to"
+alias wifi="sudo netctl-auto switch-to"
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias testnet="ping 8.8.8.8"
 
 # safety
 alias rm="rm --preserve-root -Iv"
@@ -48,14 +49,25 @@ alias pacexpl="/usr/bin/pacman -D --asexp"	# 'mark as [expl]icit'	- mark one or 
 alias pacimpl="/usr/bin/pacman -D --asdep"	# 'mark as [impl]icit'	- mark one or more packages as non explicitly installed
 
 # aura
-alias aur="sudo aura -A"		# default action	- install one or more packages
-alias auru="sudo aura -Ayu"		# '[u]pdate'		- upgrade all packages to their newest version
-alias aurr="sudo aura -Rs"		# '[r]emove'		- uninstall one or more packages
-alias aurs="sudo aura -Ss"		# '[s]earch'		- search for a package using one or more keywords
-alias auri="sudo aura -Ai"		# '[i]nfo'		- show information about a package
-alias aurlo="sudo aura -Qdt"		# '[l]ist [o]rphans'	- list all packages which are orphaned
-alias aurc="sudo aura -Scc"		# '[c]lean cache'	- delete all not currently installed package files
-alias aurlf="sudo aura -Ql"		# '[l]ist [f]iles'	- list all files installed by a given package
+alias aur="aura -A"		# default action	- install one or more packages
+alias auru="aura -Ayu"		# '[u]pdate'		- upgrade all packages to their newest version
+alias aurr="aura -Rs"		# '[r]emove'		- uninstall one or more packages
+alias aurs="aura -Ss"		# '[s]earch'		- search for a package using one or more keywords
+alias auri="aura -Ai"		# '[i]nfo'		- show information about a package
+alias aurlo="aura -Qdt"		# '[l]ist [o]rphans'	- list all packages which are orphaned
+alias aurc="aura -Scc"		# '[c]lean cache'	- delete all not currently installed package files
+alias aurlf="aura -Ql"		# '[l]ist [f]iles'	- list all files installed by a given package
 alias aurexpl="aura -D --asexp"	# 'mark as [expl]icit'	- mark one or more packages as explicitly installed 
 alias aurimpl="aura -D --asdep"	# 'mark as [impl]icit'	- mark one or more packages as non explicitly installed
 
+# yaourt
+alias ya="/usr/bin/yaourt -S"		# default action	- install one or more yakages
+alias yau="/usr/bin/yaourt -Syu"	# '[u]pdate'		- upgrade all yakages to their newest version
+alias yar="/usr/bin/yaourt -Rs"		# '[r]emove'		- uninstall one or more yakages
+alias yas="/usr/bin/yaourt -Ss"		# '[s]earch'		- search for a yakage using one or more keywords
+alias yai="/usr/bin/yaourt -Si"		# '[i]nfo'		- show information about a yakage
+alias yalo="/usr/bin/yaourt -Qdt"	# '[l]ist [o]rphans'	- list all yakages which are orphaned
+alias yac="/usr/bin/yaourt -Scc"	# '[c]lean cache'	- delete all not currently installed yakage files
+alias yalf="/usr/bin/yaourt -Ql"	# '[l]ist [f]iles'	- list all files installed by a given yakage
+alias yaexpl="/usr/bin/yaourt -D --asexp"	# 'mark as [expl]icit'	- mark one or more yakages as explicitly installed 
+alias yaimpl="/usr/bin/yaourt -D --asdep"	# 'mark as [impl]icit'	- mark one or more yakages as non explicitly installed
