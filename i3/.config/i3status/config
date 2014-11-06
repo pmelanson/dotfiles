@@ -1,0 +1,85 @@
+general {
+#        output_format = "i3status"
+        colors = true
+        interval = 1
+}
+
+order += "cpu_temperature 0"
+order += "cpu_temperature 1"
+order += "cpu_temperature 2"
+order += "cpu_temperature 3"
+order += "cpu_usage"
+order += "load"
+order += "ddate"
+order += "disk /mnt/share/"
+order += "battery 0"
+order += "time"
+order += "volume speaker"
+order += "volume headphone"
+
+ethernet eth0 {
+        # if you use %speed, i3status requires the cap_net_admin capability
+        format_up = "%speed"
+        format_down = "E: down"
+}
+
+cpu_temperature 0 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/temp2_input"
+}
+cpu_temperature 1 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/temp3_input"
+}
+cpu_temperature 2 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/temp4_input"
+}
+cpu_temperature 3 {
+	format = "%degrees°C"
+	path = "/sys/devices/platform/coretemp.0/temp5_input"
+}
+
+time {
+        format = "%a %e, %b %Y %X"
+}
+
+ddate {
+	format = "%{%A, %B %e%} %Y%N - %H"
+}
+
+battery 0 {
+	integer_battery_capacity = true
+	low_threshold = 15
+	threshold_type = percentage
+        format = "%status %percentage %consumption"
+}
+
+volume speaker {
+	format = "s: %volume"
+	device = "default"
+	mixer = "Speaker"
+	mixer_idx = 0
+}
+volume headphone {
+	format = "h: %volume"
+	device = "default"
+	mixer = "Headphone"
+	mixer_idx = 0
+}
+
+load {
+        format = "L: %1min, %5min, %15min"
+}
+
+cpu_usage {
+	format = "%usage"
+}
+
+disk "/" {
+        format = "%used/%total"
+}
+
+
+disk "/mnt/share/" {
+        format = "%used/%total"

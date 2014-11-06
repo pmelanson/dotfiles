@@ -1,0 +1,28 @@
+" my own comms
+execute "set colorcolumn=" . join(range(81,335), ',')
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+set smartindent
+function! ToggleErrors()
+    let old_last_winnr = winnr('$')
+    lclose
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        Errors
+    endif
+endfunction
+
+nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<Cr>
+
+autocmd FileType racket setlocal comments=:;;
+
+autocmd FileType racket map <F9> :w<CR>:echo system("racket -e '(require test-engine/racket-tests)' -t ".expand("%")." -e '(test)'")<CR>
+"autocmd FileType racket let g:syntastic_racket_code_ayatollah_args="-e '(require test-engine/racket-tests)' -t "
+"autocmd FileType racket let g:syntastic_racket_code_ayatollah_post_args="-e '(test)'"
+"autocmd FileType racket let g:syntastic_racket_code_ayatollah_script='/home/vac/.vim/bundle/syntastic/syntax_checkers/racket/code-ayatollah.rkt'
+
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
