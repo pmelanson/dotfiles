@@ -1,0 +1,14 @@
+0000000000000000000000000000000000000000 c78277fd8bda5fec87504469afdf121355876006 Patrick Melanson <pj2melan@uwaterloo.ca> 1422654682 -0500	clone: from https://github.com/robbyrussell/oh-my-zsh.git
+c78277fd8bda5fec87504469afdf121355876006 e55c715508a2f652fed741f2047c66dda2c6e5b0 Patrick Melanson <pj2melan@uwaterloo.ca> 1425674108 -0500	pull --rebase --stat origin master: checkout e55c715508a2f652fed741f2047c66dda2c6e5b0
+e55c715508a2f652fed741f2047c66dda2c6e5b0 e55c715508a2f652fed741f2047c66dda2c6e5b0 Patrick Melanson <pj2melan@uwaterloo.ca> 1425674108 -0500	rebase finished: returning to refs/heads/master
+e55c715508a2f652fed741f2047c66dda2c6e5b0 e6a601dc04fe6d989cbeb1af455834d0ca24ae1a pj2melan <pj2melan@uwaterloo.ca> 1436031310 -0400	commit: yes
+e6a601dc04fe6d989cbeb1af455834d0ca24ae1a a207a38d634cc10441636bc4359cd8a18c502dea pj2melan <pj2melan@uwaterloo.ca> 1437235622 -0400	pull --rebase --stat origin master: checkout a207a38d634cc10441636bc4359cd8a18c502dea
+a207a38d634cc10441636bc4359cd8a18c502dea aa6a2d990512ffececef539fd53f3ab35426625c pj2melan <pj2melan@uwaterloo.ca> 1437492002 -0400	commit: agnoster need powerline
+aa6a2d990512ffececef539fd53f3ab35426625c aa6a2d990512ffececef539fd53f3ab35426625c pj2melan <pj2melan@uwaterloo.ca> 1437492040 -0400	rebase finished: returning to refs/heads/master
+aa6a2d990512ffececef539fd53f3ab35426625c 0025a02ef4290cd7497fb2c8198e47325bef554c Patrick Melanson <patrick.melanson@uwaterloo.ca> 1438442209 -0400	commit: yes
+0025a02ef4290cd7497fb2c8198e47325bef554c 07d32e363ef02f0bfe08f571512cf59819c4d306 Patrick Melanson <patrick.melanson@uwaterloo.ca> 1438442249 -0400	pull: Merge made by the 'recursive' strategy.
+07d32e363ef02f0bfe08f571512cf59819c4d306 192de6bcffb0294e19f4203f6f7dc1a7f3e427be Patrick Melanson <patrick.melanson@uwaterloo.ca> 1440870269 -0400	pull --rebase --stat origin master: checkout 192de6bcffb0294e19f4203f6f7dc1a7f3e427be
+192de6bcffb0294e19f4203f6f7dc1a7f3e427be 6996c3dcb45575872f7b6cb5cc90a55569f707db Patrick Melanson <patrick.melanson@uwaterloo.ca> 1440870270 -0400	pull --rebase --stat origin master: agnoster need powerline
+6996c3dcb45575872f7b6cb5cc90a55569f707db bbe2c23dbb47df2abb948a052c6eeeb52f395a6f Patrick Melanson <patrick.melanson@uwaterloo.ca> 1440870270 -0400	pull --rebase --stat origin master: yes
+bbe2c23dbb47df2abb948a052c6eeeb52f395a6f bbe2c23dbb47df2abb948a052c6eeeb52f395a6f Patrick Melanson <patrick.melanson@uwaterloo.ca> 1440870270 -0400	rebase finished: returning to refs/heads/master
+bbe2c23dbb47df2abb948a052c6eeeb52f395a6f d228fbca589f59c64d73f131a54d8cad19f9def1 Patrick Melanson <patrick.melanson@uwaterloo.ca> 1462303634 -0400	commit: commiting to send

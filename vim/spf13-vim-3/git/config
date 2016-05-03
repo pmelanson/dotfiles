@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/spf13/spf13-vim.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "3.0"]
+	remote = origin
+	merge = refs/heads/3.0
