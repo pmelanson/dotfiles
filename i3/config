@@ -1,0 +1,249 @@
+# Should you change your keyboard layout somewhen, delete
+# this file and re-run i3-config-wizard(1).
+#
+
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+#gimme gaps
+gaps outer 1
+gaps inner 3
+smart_gaps on
+smart_borders on
+
+set $mod Mod4
+
+set $orange #e62927
+set $bgnorm #313131
+set $fgnorm #ffffff
+#set $bfoc   #df1e1e
+set $bfoc   $orange
+set $bgunf #3f3f3f
+#set $bunf   #2a2a2a
+set $bunf   $bgunf
+
+
+workspace_auto_back_and_forth yes
+
+# font for window titles. ISO 10646 = Unicode
+font xft:Source Code Pro Bold 8
+#font pango:DejaVu Sans Mono 10
+#font pango:Ubuntu Mono 8
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start xboomx (a program launcher)
+#bindsym $mod+d exec xboomx
+#bindsym $mod+d exec gnome-do
+#bindsym $mod+d exec dmenu
+## I commented the following out so I could just run rofi in daemon mode
+#bindsym $mod+d exec rofi -show run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+equal workspace vlc
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move workspace 1
+bindsym $mod+Shift+2 move workspace 2
+bindsym $mod+Shift+3 move workspace 3
+bindsym $mod+Shift+4 move workspace 4
+bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+6 move workspace 6
+bindsym $mod+Shift+7 move workspace 7
+bindsym $mod+Shift+8 move workspace 8
+bindsym $mod+Shift+9 move workspace 9
+bindsym $mod+Shift+0 move workspace 10
+bindsym $mod+Shift+equal move workspace vlc
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exit
+#bindsym #mod+Shift+e exec gnome-session-quit --logout
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # They resize the border in the direction you pressed, e.g.
+  # when pressing left, the window is resized so that it has
+  # more space on its left
+
+  bindsym h               resize shrink left 10 px or 10 ppt
+  bindsym Shift+h         resize grow   left 10 px or 10 ppt
+
+  bindsym j               resize shrink down 10 px or 10 ppt
+  bindsym Shift+j         resize grow   down 10 px or 10 ppt
+
+  bindsym k               resize shrink up 10 px or 10 ppt
+  bindsym Shift+k         resize grow   up 10 px or 10 ppt
+
+  bindsym l               resize shrink right 10 px or 10 ppt
+  bindsym Shift+l         resize grow   right 10 px or 10 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left        resize shrink left 10 px or 10 ppt
+  bindsym Shift+Left  resize grow   left 10 px or 10 ppt
+
+  bindsym Down        resize shrink down 10 px or 10 ppt
+  bindsym Shift+Down  resize grow   down 10 px or 10 ppt
+
+  bindsym Up          resize shrink up 10 px or 10 ppt
+  bindsym Shift+Up    resize grow   up 10 px or 10 ppt
+
+  bindsym Right       resize shrink right 10 px or 10 ppt
+  bindsym Shift+Right resize grow   right 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+#i also put dis here
+bar {
+	status_command    i3status
+	position          bottom
+	modifier $mod
+
+	workspace_buttons yes
+
+	font xft:Source Code Pro Bold 8
+
+	colors {
+        background #a2a2a2
+        statusline #383838
+
+	# class        	      border 		backgrd 	text
+        focused_workspace     $bfoc 		$orange 	$fgnorm
+        active_workspace      $orange 		$bgunf  	$fgnorm
+        inactive_workspace    $bunf 		$bgunf  	$fgnorm
+        urgent_workspace      $bfoc 		#ff1203 	$fgnorm
+	}
+}
+
+exec $HOME/bin/chwall
+
+bindsym XF86AudioRaiseVolume exec $HOME/bin/volumemod +10%
+bindsym XF86AudioLowerVolume exec $HOME/bin/volumemod -10%
+bindsym XF86AudioMute exec pactl set-sink-mute 1 on
+bindsym Print exec "scrot '%Y-%m-%d_%H%M%S.png' -e 'mv $f ~/Pictures/screenshots/; ln -s ~/Pictures/screenshots/$f'"
+
+bindsym $mod+period workspace next
+bindsym $mod+comma workspace prev
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+exec --no-startup-id urxvt -name scratchpad
+for_window [class="URxvt" instance="scratchpad"] move scratchpad
+
+assign [class="Vlc"] vlc
+assign [class="Firefox"] 1
+assign [class="Steam"] 4
+assign [class="Kerbal Space Program"] 3
+assign [class="hl2_linux"] 3
+assign [class="tixati"] 10
+assign [class="Eclipse"] 2
+assign [class="client.py"] 4
+
+new_window 1pixel
+default_orientation auto
+
+exec redshift
+exec conky
+exec xautolock -time 7 -locker "i3lock" -killtime 3 -killer "systemctl suspend"
+#exec rofi -key-run SuperL+d
+bindsym $mod+d exec rofi -show run
+#exec rofi -key-ssh SuperL+s
+bindsym $mod+s exec rofi -show ssh
+
+bindsym XF86MonBrightnessUp exec "sudo ~/bin/brightnessmod 50"
+bindsym XF86MonBrightnessDown exec "sudo ~/bin/brightnessmod -50"
+bindsym Shift+XF86MonBrightnessUp exec "sudo ~/bin/brightnessmod max"
+bindsym Shift+XF86MonBrightnessDown exec "sudo ~/bin/brightnessmod min"
+
+bindsym $mod+m exec "xautolock -locknow"
+bindsym $mod+x exec "synclient TouchpadOff=$(synclient -l | grep -c 'TouchpadOff.*=.*0')"
+bindsym $mod+i exec "xcalib -a -i"
+
+# class                 border  backgr. text    indicator
+client.focused          $bfoc   $orange $fgnorm $bfoc
+client.focused_inactive $orange $bgunf  $fgnorm #484e50
+client.unfocused        $bunf   $bgunf  $fgnorm #292d2e
+client.urgent           $bfoc   $orange $fgnorm #900000

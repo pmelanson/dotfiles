@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm "$(tail -1 $HOME/.fehbg | cut -f 4- -d ' ' | sed "s/^.//" | sed "s/..$//")"
+chwall

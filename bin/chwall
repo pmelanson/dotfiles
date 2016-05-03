@@ -1,0 +1,4 @@
+#!/bin/sh
+
+DISPLAY=:0
+feh --bg-fill "$(find ~/Pictures/wallpapers/|shuf -n1)"
