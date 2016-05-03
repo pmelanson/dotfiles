@@ -1,0 +1,76 @@
+# modified commands
+alias ssh='mosh'
+alias grep='grep  --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias egrep='egrep  --color=auto --exclude-dir={.bzr,.cvs,.git,.hg,.svn}'
+alias feh="feh -z. -S mtime --reverse"
+alias utarg="tar -vxf"
+alias utarb="tar -xvjf"
+alias make="make -j6"
+alias ..="cd .."
+alias mkdir="mkdir -pv"
+alias df="df -h"
+alias du="du -h"
+alias vi="vim"
+
+# ls
+alias ls=" ls --color=auto -hF"
+alias l="ls"
+alias ll="ls -lFh"
+alias la="ls -A"
+alias lla="ls -lFAh"
+alias lal="ls -lFAh"
+alias lx="ll -BX"
+alias lzr="ll -S"
+alias lz="ll -rSh"
+alias lt="ll -rt"
+alias lm="ll -A | less"
+
+# new commands
+alias rscp='rsync -chavzrP --stats '
+alias pls='sudo $(history -p !!)'
+alias catpdf='gs -q -sPAPERSIZE=letter -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=output.pdf'
+alias scanpls='scanimage -p -d "hpaio:/usb/Officejet_6500_E709n?serial=TH07D4212S05G2" --format=png'
+alias political_rap="while true; cat $HOME/political | festival --tts; end"
+alias deva="devmon -a"
+alias devc="devmon -c"
+alias hist="history | grep"
+alias susp="sudo systemctl suspend"
+alias f="find ./ | grep -i"
+alias testnet="ping 8.8.8.8"
+alias udl-orch="youtube-dl -x --audio-quality 0 -o '~/Music/orchestral/%(title)s.%(ext)s'"
+alias udl-misc="youtube-dl -x --audio-quality 0 -o '~/Music/misc/%(title)s.%(ext)s'"
+alias klog="cat ~/.config/unity3d/Squad/Kerbal\ Space\ Program/Player.log"
+
+# safety
+alias rm="rm --preserve-root -Iv"
+alias cp="cp -iv"
+alias mv="mv -i"
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias cls=' echo -ne "\033c"'       # clear screen for real (it does not work in Terminology)
+
+# pacman
+#Pacman () { sudo etckeeper pre-install && sudo pacman "$@" && sudo etckeeper post-install; }
+alias pac="pacman -S"     # default action    - install one or more packages
+alias pacu="pacman -Syu"      # '[u]pdate'        - upgrade all packages to their newest version
+alias pacr="pacman -Rs"       # '[r]emove'        - uninstall one or more packages
+alias pacs="pacman -Ss"       # '[s]earch'        - search for a package using one or more keywords
+alias paci="pacman -Si"       # '[i]nfo'      - show information about a package
+alias paclo="pacman -Qdt"     # '[l]ist [o]rphans'    - list all packages which are orphaned
+alias pacc="pacman -Scc"      # '[c]lean cache'   - delete all not currently installed package files
+alias paclf="pacman -Ql"      # '[l]ist [f]iles'  - list all files installed by a given package
+
+# yaourt
+#Yaourt () { sudo etckeeper pre-install && yaourt "$@" && sudo etckeeper post-install; }
+alias ya="yaourt -S"       # default action    - install one or more yakages
+alias yau="yaourt -Syu"    # '[u]pdate'        - upgrade all yakages to their newest version
+alias yar="yaourt -Rs"     # '[r]emove'        - uninstall one or more yakages
+alias yas="yaourt -Ss"     # '[s]earch'        - search for a yakage using one or more keywords
+alias yai="yaourt -Si"     # '[i]nfo'      - show information about a yakage
+alias yalo="yaourt -Qdt"   # '[l]ist [o]rphans'    - list all yakages which are orphaned
+alias yac="yaourt -Scc"    # '[c]lean cache'   - delete all not currently installed yakage files
+alias yalf="yaourt -Ql"    # '[l]ist [f]iles'  - list all files installed by a given yakage
+alias yaq="yaourt -Qn"
+
